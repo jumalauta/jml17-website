@@ -2,6 +2,7 @@
 import path from 'path';
 import gulp from 'gulp';
 import sass from 'gulp-sass';
+import resolve from 'resolve';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
@@ -98,7 +99,23 @@ gulp.task('sass', [], () => gulp
   .pipe(sourcemaps.init())
   .pipe(csscomb())
   .pipe(sass({
-    // importer: moduleImporter(),
+    importer: (url, prev, done) => {
+      try {
+        // try to resolve node_modules
+        const resolvePath = resolve.sync(url);
+        const extname = path.extname(resolvePath);
+        if(extname === '.sass' || extname === '.scss') {
+          // resolve js file
+          const modulePath = path.resolve('./');
+          const relativePath = path.relative(modulePath, resolvePath);
+          return { file: relativePath };
+        } else {
+          return new Error(`${resolvePath} is not a valid SASS/SCSS file`);
+        }
+      } catch (e) {
+        return { file: url };
+      }
+    },
     outputStyle: gutil.env.production === true ? 'compressed' : 'expanded',
     includePaths: ['./node_modules'],
   }))
