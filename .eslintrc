@@ -1,0 +1,25 @@
+{
+	"extends": "airbnb-base/legacy",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+		}
+	},
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"plugins": [
+		"babel"
+	],
+	"rules": {
+		"quotes": [ 1, "single" ],
+		"no-undef": 2,
+		"no-extra-semi": 1,
+		"no-underscore-dangle": 2,
+		"no-console": 0,
+		"no-alert": 1,
+		"camelcase": 2
+	}
+}
