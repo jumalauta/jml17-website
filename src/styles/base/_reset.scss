@@ -1,0 +1,42 @@
+@import '../config/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+// fade in after fonts and scripts have loaded
+.js {
+  .wrapper {
+    transition: opacity 500ms ease-in-out 350ms;
+  }
+  .spinner {
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 250ms ease-in-out 00ms;
+  }
+  &.wf-inactive .wrapper, &.app-loading .wrapper {
+    opacity: 0;
+  }
+  &.wf-active.app-loaded .wrapper {
+    opacity: 1;
+  }
+  &.wf-inactive .wrapper, &.app-loading .spinner {
+    opacity: 1;
+  }
+  &.wf-active.app-loaded .spinner {
+    opacity: 0;
+  }
+}
+
+.no-js {
+  .spinner {
+    display: none;
+  }
+}

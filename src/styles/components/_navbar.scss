@@ -1,0 +1,68 @@
+
+.navbar {
+  $logoWidth: 200px + $grid-gutter;
+  $ulOffset: ($logoWidth / 2);
+  display: block;
+  text-align: center;
+  font-family: $navbar-font-family;
+  width: 100%;
+  height: $header-height;
+  ul {
+    display: block;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: $navbar-font-size;
+    width: calc(50% - #{$ulOffset});
+    li {
+      display: block;
+      vertical-align: middle;
+      a {
+        padding: $navbar-vertical-padding $navbar-horizontal-padding;
+        display: block;
+        color: $navbar-link-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 250ms ease-in-out;
+        &:hover {
+          color: transparentize($navbar-link-color, 0.5);
+        }
+      }
+    }
+    &.navbar-left {
+      li {
+        float: right;
+      }
+    }
+    &.navbar-right {
+      li {
+        float: left;
+      }
+    }
+  }
+  .logo {
+    display: block;
+    float: left;
+    width: $logoWidth;
+    text-align: center;
+    padding: (($header-height - (87px * 0.6)) / 2) 0;
+    svg {
+      width: 267px * 0.6;
+      height: 87px * 0.6;
+      fill: $navbar-link-color;
+      transition: fill 250ms ease-in-out;
+    }
+  }
+  .scroll-top & {
+    ul li a {
+      color: $white;
+      &:hover {
+        color: transparentize($white, 0.5);
+      }
+    }
+    .logo svg {
+      fill: $white;
+    }
+  }
+}

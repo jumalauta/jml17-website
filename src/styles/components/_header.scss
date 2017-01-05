@@ -1,0 +1,12 @@
+.site-header {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  background: $header-background;
+  transition: background 250ms ease-in-out;
+  z-index: $header-zindex;
+  .scroll-top & {
+    background: transparent;
+  }
+}

@@ -1,0 +1,46 @@
+@import '../utils/functions';
+
+// -- Colors
+$black: #000;
+$white: #fff;
+
+$primary-color: $black;
+$base-color: $black;
+
+// -- Typography
+$font-family-serif: serif;
+$font-family-sans-serif: sans-serif;
+$font-family-monospace: monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-headings: "Rift", sans-serif;
+
+$font-size-base: 16px;
+$font-size-h1: ( 32 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h2: ( 24 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h3: ( 20 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h4: ( 18 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h5: 1rem;
+$font-size-h6: 0.8rem;
+
+// Unit-less `line-height` for use in components like buttons.
+$line-height-base: 20/16;
+// Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base));
+
+// -- Grid
+$grid-gutter: 20px;
+
+// -- Header
+$header-height: 100px;
+$header-background: $white;
+
+// -- Navbar
+$navbar-link-color: $primary-color;
+$navbar-font-family: "Rift", sans-serif;
+$navbar-font-size: 1.8rem;
+$navbar-vertical-padding: ($header-height - (1.8 * $font-size-base)) / 2;
+$navbar-horizontal-padding: $grid-gutter / 2;
+
+
+// -- Z order
+$header-zindex: 1000;

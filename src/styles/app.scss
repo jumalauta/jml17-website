@@ -1,0 +1,15 @@
+@import "config/init";
+@import "config/variables";
+
+@import "utils/functions";
+@import "utils/mixins";
+
+@import "base/reset";
+@import "base/colors";
+@import "base/typography";
+
+// components
+@import 'components/spinner';
+@import 'components/header';
+@import 'components/navbar';
+@import 'components/hero';
