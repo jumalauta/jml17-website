@@ -2,13 +2,13 @@
 import path from 'path';
 import gulp from 'gulp';
 import sass from 'gulp-sass';
-import moduleImporter from 'sass-module-importer';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
 import gutil from 'gulp-util';
 import BrowserSync from 'browser-sync';
 import eslint from 'gulp-eslint';
+import uglify from 'gulp-uglify';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import modernizr from 'gulp-modernizr';
@@ -18,7 +18,7 @@ import htmlmin from 'gulp-htmlmin';
 import rollup from 'rollup-stream';
 import json from 'rollup-plugin-json';
 import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify';
+import rollupUglify from 'rollup-plugin-uglify';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import builtins from 'rollup-plugin-node-builtins';
@@ -135,6 +135,7 @@ gulp.task('modernizr', () => gulp
     'tests': [],
     'excludeTests': []
   }))
+  .pipe(uglify())
   .pipe(gulp.dest(path.join(config.dest, '/scripts')))
 );
 
@@ -173,7 +174,7 @@ gulp.task('rollup', ['eslint'], function () {
         commonjs(commonjsOptions),
         json(),
         babel(babelOptions),
-        uglify()
+        rollupUglify()
       ] : [
         builtins(),
         nodeResolve(nodeResolveOptions),
