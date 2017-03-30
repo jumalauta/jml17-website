@@ -1,18 +1,19 @@
 .hero {
+  background: #000;
   position: relative;
   width: 100%;
   height: (900/1920) * 100vw;
   overflow: hidden;
-  .hero-background {
+  .hero__background {
     width: 100%;
     height: 100%;
   }
-  .hero-image {
+  .hero__image {
     width: 100%;
     height: 100%;
-    background: transparent url('../images/top.jpg') center center/cover no-repeat;
+    background: transparent center center/cover no-repeat;
   }
-  .hero-content {
+  .hero__content {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -32,6 +33,31 @@
       white-space: nowrap;
       font-size: 3rem;
       font-weight: 500;
+      color: inherit;
     }
+  }
+  .hero__arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    color: $white;
+    line-height:0;
+    text-align: center;
+    animation: 1.5s ease-in-out 0s infinite alternate arrowBounce;
+    margin-left: -21px;
+    z-index: 3;
+    transition: opacity 150ms ease-in-out;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+@keyframes arrowBounce {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(10px);
   }
 }

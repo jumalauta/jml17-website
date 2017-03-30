@@ -1,0 +1,23 @@
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: $line-height-computed 0;
+  &__container {
+    @include outer-container;
+    max-width: 960px;
+  }
+  &__copyright {
+    @include span-columns(2 of 3);
+    //font-family: $font-family-headings;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding-top: 17px;
+  }
+  &__logo {
+    @include span-columns(1 of 3);
+    img {
+      width: 266.7px * 0.6;
+      height: 86.8px * 0.6;
+    }
+  }
+}

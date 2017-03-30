@@ -1,0 +1,6 @@
+.content-section {
+  @include outer-container;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: $line-height-computed * 2 0;
+}

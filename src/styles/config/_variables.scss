@@ -3,22 +3,27 @@
 // -- Colors
 $black: #000;
 $white: #fff;
+$palelow: 240;
+$palehigh: 243;
+$paleblue: rgb($palelow, $palelow, $palehigh);
+$palered: rgb($palehigh, $palelow, $palelow);
+$palegreen: rgb($palelow, $palehigh, $palelow);
 
 $primary-color: $black;
 $base-color: $black;
 
 // -- Typography
 $font-family-serif: serif;
-$font-family-sans-serif: sans-serif;
+$font-family-sans-serif: "proxima-nova", sans-serif;
 $font-family-monospace: monospace;
 $font-family-base: $font-family-sans-serif;
 $font-family-headings: "Rift", sans-serif;
 
 $font-size-base: 16px;
-$font-size-h1: ( 32 / strip-unit($font-size-base) ) * 1rem;
-$font-size-h2: ( 24 / strip-unit($font-size-base) ) * 1rem;
-$font-size-h3: ( 20 / strip-unit($font-size-base) ) * 1rem;
-$font-size-h4: ( 18 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h1: ( 48 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h2: ( 34 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h3: ( 24 / strip-unit($font-size-base) ) * 1rem;
+$font-size-h4: ( 20 / strip-unit($font-size-base) ) * 1rem;
 $font-size-h5: 1rem;
 $font-size-h6: 0.8rem;
 
@@ -31,7 +36,7 @@ $line-height-computed: floor(($font-size-base * $line-height-base));
 $grid-gutter: 20px;
 
 // -- Header
-$header-height: 100px;
+$header-height: 80px;
 $header-background: $white;
 
 // -- Navbar
@@ -40,7 +45,6 @@ $navbar-font-family: "Rift", sans-serif;
 $navbar-font-size: 1.8rem;
 $navbar-vertical-padding: ($header-height - (1.8 * $font-size-base)) / 2;
 $navbar-horizontal-padding: $grid-gutter / 2;
-
 
 // -- Z order
 $header-zindex: 1000;

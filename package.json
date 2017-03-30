@@ -45,11 +45,13 @@
     "rollup-plugin-uglify": "1.0.1",
     "rollup-stream": "1.16.0",
     "run-sequence": "1.2.2",
+    "sass-module-importer": "1.4.0",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
     "webpack": "1.14.0"
   },
   "dependencies": {
-    "normalize-scss": "6.0.0"
+    "normalize-scss": "6.0.0",
+    "susy": "2.2.12"
   }
 }

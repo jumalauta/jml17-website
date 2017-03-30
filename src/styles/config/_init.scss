@@ -1,5 +1,2 @@
-@import 'normalize-scss/sass/normalize/variables';
-@import 'normalize-scss/sass/normalize/vertical-rhythm';
-@import 'normalize-scss/sass/normalize/normalize-mixin';
-
+@import "normalize-scss";
 @include normalize();

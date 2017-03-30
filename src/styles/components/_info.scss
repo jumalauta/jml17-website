@@ -1,0 +1,8 @@
+.info {
+  &__left {
+    @include span-columns(6 of 12);
+  }
+  &__right {
+    @include span-columns(6 of 12);
+  }
+}

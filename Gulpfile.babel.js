@@ -71,9 +71,9 @@ gulp.task('copy', [], () => gulp
 /**
  * Minify html
  */
-gulp.task('htmlmin', function() {
+gulp.task('htmlmin', function () {
   return gulp.src(path.join(config.src, '**/*.html'))
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest(config.dest));
 });
 /**
@@ -117,7 +117,7 @@ gulp.task('sass', [], () => gulp
       }
     },
     outputStyle: gutil.env.production === true ? 'compressed' : 'expanded',
-    includePaths: ['./node_modules'],
+    includePaths: require('bourbon-neat').includePaths.concat(['./node_modules']),
   }))
   .pipe(plumber())
   .pipe(postcss([autoprefixer({ browsers: ['last 3 versions'] })]))
@@ -177,7 +177,7 @@ gulp.task('rollup', ['eslint'], function () {
     babelrc: false,
     presets: ['es2015-rollup'],
   };
-  if(gutil.env.production === true) {
+  if (gutil.env.production === true) {
     babelOptions.compact = true;
   }
 

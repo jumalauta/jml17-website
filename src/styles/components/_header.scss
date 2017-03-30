@@ -6,7 +6,9 @@
   background: $header-background;
   transition: background 250ms ease-in-out;
   z-index: $header-zindex;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   .scroll-top & {
     background: transparent;
+    box-shadow: none;
   }
 }

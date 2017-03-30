@@ -8,8 +8,17 @@
 @import "base/colors";
 @import "base/typography";
 
+@import "layout/grid";
+
 // components
 @import 'components/spinner';
 @import 'components/header';
+@import 'components/footer';
 @import 'components/navbar';
 @import 'components/hero';
+@import 'components/contentsection';
+@import 'components/sectionheader';
+@import 'components/contenttext';
+@import 'components/info';
+@import 'components/compos';
+@import 'components/pattern';

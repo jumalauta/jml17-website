@@ -1,0 +1,26 @@
+@import '../config/variables';
+
+@mixin clearfix() {
+  &:before, &:after {
+    display: table; /* 2 */
+    content: ' '; /* 1 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin ir() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  border: 0;
+}
+
+.ir {
+  @include ir();
+}
+
+.clearfix {
+  @include clearfix();
+}

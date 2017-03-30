@@ -19,7 +19,8 @@ export default class Parallax {
       this.item.style.transform = 'translateY(0)';
     }
 
-    window.addEventListener('scroll', this.render.bind(this));
+    this.render = this.render.bind(this);
+    window.addEventListener('scroll', this.render);
     this.render();
   }
 
@@ -51,18 +52,21 @@ export default class Parallax {
       (containerRect.bottom >= 0 && containerRect.bottom <= bodyRect.height)
     ) {
       let ratio = 0;
-      if (this.anchor === 'middle') {
+      let transform = 0;
+
+      if (this.anchor === 'center') {
         const containerMiddle = containerRect.top + (containerRect.height / 2);
         const screenMiddle = bodyRect.height / 2;
         const middleDiff = screenMiddle - containerMiddle;
         const max = containerRect.height;
         const min = -max;
         ratio = (middleDiff - min) / (max - min);
+        transform = (ratio * (this.amount * 2)) - this.amount
       } else if (this.anchor === 'top') {
         const diff = containerRect.height - Math.abs(containerRect.top);
         ratio = 1 - (diff / containerRect.height);
+        transform = ratio * this.amount;
       }
-      const transform = ratio * this.amount;
 
       if (Modernizr.csstransforms3d) {
         this.item.style.transform = `translate3d(0, ${transform}${this.unit}, 0)`;
