@@ -1,4 +1,5 @@
-import { tween } from 'shifty/src/main';
+// i don't even, fuck this shit, gotta configure rollup to import modules properly or something
+import {tween} from './libs/shifty/main';
 
 const offset = -80; // eslint-disable-line no-mixed-operators
 
@@ -12,7 +13,6 @@ export default class ScrollSpy {
 
     this.mainNavigation = element;
     this.anchorLinks = element.querySelectorAll('a[href^="#"]');
-    console.log(this.anchorLinks);
     this.anchorLinks.forEach((link) => {
       link.addEventListener('click', this.handleLinkClick);
     });
