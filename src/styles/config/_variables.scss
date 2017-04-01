@@ -1,13 +1,9 @@
 @import '../utils/functions';
+@import './paletton';
 
 // -- Colors
 $black: #000;
 $white: #fff;
-$palelow: 240;
-$palehigh: 243;
-$paleblue: rgb($palelow, $palelow, $palehigh);
-$palered: rgb($palehigh, $palelow, $palelow);
-$palegreen: rgb($palelow, $palehigh, $palelow);
 
 $primary-color: $black;
 $base-color: $black;

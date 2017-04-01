@@ -1,6 +1,7 @@
 .compos {
   @include fill-parent();
   @include clearfix();
+  margin-top: $line-height-computed * 2;
   margin-bottom: $line-height-computed;
   &__compo {
     // manual float and width to remove gutter
@@ -11,12 +12,12 @@
     font-size: 0.8rem;
     min-height: 230px;
     text-align: center;
-    background: $palegreen;
+    background: $rgba-primary-1;
     &:nth-child(3n) {
-      background: $paleblue;
+      background: $rgba-secondary-2-1;
     }
     &:nth-child(3n + 1) {
-      background: $palered;
+      background: $rgba-secondary-1-1;
     }
   }
   &__heading {
