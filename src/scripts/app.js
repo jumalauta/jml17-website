@@ -1,4 +1,5 @@
 import Parallax from './parallax';
+import MainNavigation from './mainnavigation';
 
 class App {
   constructor() {
@@ -9,6 +10,10 @@ class App {
 
     // bind methods
     this.handleScroll = this.handleScroll.bind(this);
+
+    // main navigation
+    this.mainNavigation = new MainNavigation(window.document.getElementById('mainNavigation'));
+    console.log('this.mainNavigation', window.document.getElementById('mainNavigation'), this.mainNavigation);
 
     // init parallax elements
     this.parallaxElements = window.document.querySelectorAll('[data-parallax]');

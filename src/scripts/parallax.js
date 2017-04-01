@@ -56,7 +56,7 @@ export default class Parallax {
       const max = containerRect.height;
       const min = -max;
       ratio = (middleDiff - min) / (max - min);
-      transform = (ratio * (this.amount * 2)) - this.amount
+      transform = (ratio * (this.amount * 2)) - this.amount;
     } else if (this.anchor === 'top') {
       const diff = containerRect.height - Math.abs(containerRect.top);
       ratio = 1 - (diff / containerRect.height);

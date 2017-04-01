@@ -42,6 +42,12 @@ $navbar-font-family: "Rift", sans-serif;
 $navbar-font-size: 1.8rem;
 $navbar-vertical-padding: ($header-height - (2 * $font-size-base)) / 2;
 $navbar-horizontal-padding: $grid-gutter / 2;
+$navbar-breakpoint: 1000px;
 
 // -- Z order
 $header-zindex: 1000;
+
+// -- Hamburger settings
+$hamburger-padding-x: ($header-height - 28px) / 2;
+$hamburger-padding-y: ($header-height - 28px) / 2;
+$hamburger-layer-color: $navbar-link-color;

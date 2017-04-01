@@ -45,8 +45,14 @@
   </svg>
 </div>
 <div class="wrapper">
-  <header class="site-header">
-    <navbar class="navbar">
+  <header class="site-header" id="mainNavigation">
+    <button id="mainNavigationToggle" class="hamburger hamburger--squeeze" type="button"
+            aria-label="Menu" aria-controls="navigation">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <nav id="navigation" class="navbar">
       <ul class="navbar-left">
         <li><a href="#about">About</a></li>
         <li><a href="#register">Register</a></li>
@@ -67,7 +73,7 @@
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
-    </navbar>
+    </nav>
   </header>
   <div class="main">
     <div class="hero">

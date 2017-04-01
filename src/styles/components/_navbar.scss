@@ -1,3 +1,28 @@
+@import "hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.hamburger {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  &:focus {
+    outline: none;
+  }
+  .scroll-top .not-visible & {
+    .hamburger-box {
+      .hamburger-inner {
+        background-color: $white;
+        &:before, &:after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $navbar-breakpoint) {
+    display: none;
+  }
+}
 
 .navbar {
   $logoWidth: 200px + $grid-gutter;
@@ -55,7 +80,7 @@
       transition: fill 250ms ease-in-out;
     }
   }
-  .scroll-top & {
+  .scroll-top .not-visible & {
     ul li a {
       color: $white;
       &:after {
@@ -67,6 +92,34 @@
     }
     .logo svg {
       fill: $white;
+    }
+  }
+  @media screen and (max-width: $navbar-breakpoint) {
+    height: 100%;
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 2;
+      .is-visible & {
+        transition: fill 250ms ease-in-out 250ms;
+      }
+    }
+    ul {
+      &:first-child {
+        margin-top: calc(50vh - 250px);
+      }
+      display: block;
+      top: $header-height;
+      li {
+        display: block;
+        padding: 0;
+        a {
+          display: inline-block;
+        }
+      }
     }
   }
 }

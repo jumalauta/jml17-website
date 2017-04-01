@@ -117,7 +117,11 @@ gulp.task('sass', [], () => gulp
       }
     },
     outputStyle: gutil.env.production === true ? 'compressed' : 'expanded',
-    includePaths: require('bourbon-neat').includePaths.concat(['./node_modules']),
+    includePaths: [].concat(
+      require("bourbon").includePaths,
+      require('bourbon-neat').includePaths,
+      ['./node_modules']
+    ),
   }))
   .pipe(plumber())
   .pipe(postcss([autoprefixer({ browsers: ['last 3 versions'] })]))

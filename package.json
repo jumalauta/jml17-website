@@ -51,6 +51,9 @@
     "webpack": "1.14.0"
   },
   "dependencies": {
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "1.8.0",
+    "hamburgers": "^0.8.1",
     "normalize-scss": "6.0.0",
     "susy": "2.2.12"
   }
