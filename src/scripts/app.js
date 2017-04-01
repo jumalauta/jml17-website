@@ -1,5 +1,6 @@
 import Parallax from './parallax';
 import MainNavigation from './mainnavigation';
+import ScrollSpy from './scrollspy';
 
 class App {
   constructor() {
@@ -12,8 +13,9 @@ class App {
     this.handleScroll = this.handleScroll.bind(this);
 
     // main navigation
-    this.mainNavigation = new MainNavigation(window.document.getElementById('mainNavigation'));
-    console.log('this.mainNavigation', window.document.getElementById('mainNavigation'), this.mainNavigation);
+    let mainNavigationElement = window.document.getElementById('mainNavigation');
+    this.mainNavigation = new MainNavigation(mainNavigationElement);
+    this.scrollSpy = new ScrollSpy(mainNavigationElement);
 
     // init parallax elements
     this.parallaxElements = window.document.querySelectorAll('[data-parallax]');

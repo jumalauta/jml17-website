@@ -10,6 +10,7 @@
 .pattern-bottom {
   @extend .pattern;
   transform: translateY(-50%);
+  animation: 5s linear 0s infinite reverse patternSlide;
 }
 
 

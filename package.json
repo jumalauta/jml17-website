@@ -55,6 +55,7 @@
     "bourbon-neat": "1.8.0",
     "hamburgers": "^0.8.1",
     "normalize-scss": "6.0.0",
+    "shifty": "^2.0.1",
     "susy": "2.2.12"
   }
 }

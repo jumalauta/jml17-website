@@ -59,7 +59,7 @@
           border-bottom: 3px solid $navbar-link-color;
           transition: width 150ms ease-in-out;
         }
-        &:hover {
+        &:hover, &.active {
           color: $navbar-link-color;
           &:after {
             width: 100%;
@@ -86,7 +86,7 @@
       &:after {
         border-bottom-color: $white;
       }
-      &:hover {
+      &:hover, &.active {
         color: $white;
       }
     }
