@@ -99,7 +99,7 @@ export default class ScrollSpy {
         }
       });
 
-    if(currentItem.href !== window.document.location.hash) {
+    if(currentItem && currentItem.href !== window.document.location.hash) {
       this.noHashScroll = true;
       history.replaceState({}, document.title, currentItem.href);
       this.noHashScroll = false;
