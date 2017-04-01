@@ -1,7 +1,5 @@
 export default class MainNavigation {
   constructor(element) {
-    console.log('new main navigation', element);
-
     this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleLinkClick = this.handleLinkClick.bind(this);
     this.toggleNavi = this.toggleNavi.bind(this);
@@ -17,7 +15,6 @@ export default class MainNavigation {
 
     this.toggled = false;
     this.toggleButton.addEventListener('click', this.handleToggleClick);
-
   }
 
   handleLinkClick() {
@@ -33,11 +30,9 @@ export default class MainNavigation {
 
   toggleNavi() {
     if (this.toggled) {
-      console.log('show navi');
       this.toggleButton.className += ' is-active';
       this.element.className = this.element.className.replace(' not-visible', ' is-visible');
     } else {
-      console.log('hide navi');
       this.toggleButton.className = this.toggleButton.className.replace(' is-active', '');
       this.element.className = this.element.className.replace(' is-visible', ' not-visible');
     }
