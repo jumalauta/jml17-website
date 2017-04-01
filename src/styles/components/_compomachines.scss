@@ -1,0 +1,6 @@
+.compo-machines {
+  @include clearfix;
+  &__machine {
+    @include span-columns(4 of 12);
+  }
+}

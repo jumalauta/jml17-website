@@ -1,0 +1,6 @@
+.divider {
+  width: 200px;
+  height: 0;
+  margin: $line-height-computed * 2 auto;
+  border-bottom: 3px solid $base-color;
+}

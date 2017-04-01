@@ -57,7 +57,7 @@
   .hero__arrow {
     position: absolute;
     left: 50%;
-    bottom: 40px;
+    bottom: 80px;
     color: $white;
     line-height: 0;
     text-align: center;
@@ -82,7 +82,7 @@
 
 .hero-small {
   @extend .hero;
-  height: (900/1920) * 60vw;
+  height: (900/1920) * 70vw;
   .hero__background {
     width: 100%;
     height: 200%;

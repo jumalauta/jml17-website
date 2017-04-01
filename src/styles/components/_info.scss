@@ -1,4 +1,9 @@
 .info {
+  @include clearfix;
+  margin-top: $line-height-computed * 2;
+  h2 {
+    text-align: center;
+  }
   &__left {
     @include span-columns(6 of 12);
   }

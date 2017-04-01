@@ -1,3 +1,8 @@
 .content-text {
   margin-bottom: $line-height-computed;
 }
+
+.content-text-centered {
+  @extend .content-text;
+  text-align: center;
+}

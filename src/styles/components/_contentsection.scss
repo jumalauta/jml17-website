@@ -4,3 +4,12 @@
   margin: 0 auto;
   padding: $line-height-computed * 2 0;
 }
+
+.content-section-invert {
+  background: $base-color;
+  color: $white;
+  overflow: hidden;
+  h1,h2,h3,h4,h5,h6 {
+    color: inherit;
+  }
+}
