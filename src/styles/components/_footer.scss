@@ -4,7 +4,6 @@
   padding: $line-height-computed * 2 0;
   font-size: 0.7rem;
   h1,h2,h3,h4,h5,h6 {
-
     color: inherit;
   }
   a {
@@ -19,16 +18,27 @@
     max-width: 960px;
   }
   &__copyright {
-    @include span-columns(1 of 3);
-    //font-family: $font-family-headings;
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(1 of 3);
+     text-align: right;
+    }
+    @include pad();
     text-transform: uppercase;
-    text-align: right;
   }
   &__contact {
-    @include span-columns(1 of 3);
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(1 of 3);
+    }
+    @include pad();
+    h4 {
+      margin-top: 0;
+    }
   }
   &__logo {
-    @include span-columns(1 of 3);
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(1 of 3);
+    }
+    @include pad();
     img {
       width: 266.7px * 0.6;
       height: 86.8px * 0.6;

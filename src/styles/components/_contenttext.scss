@@ -1,5 +1,8 @@
 .content-text {
   margin-bottom: $line-height-computed;
+  @media screen and (max-width: $screen-sm-max) {
+    @include pad();
+  }
 }
 
 .content-text-centered {

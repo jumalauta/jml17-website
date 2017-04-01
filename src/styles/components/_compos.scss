@@ -10,12 +10,17 @@
     // manual float and width to remove gutter
     float: left;
     display: block;
-    width: percentage(1/4);
     @include pad();
     font-size: 0.8rem;
     min-height: 230px;
     text-align: center;
     background: $rgba-primary-1;
+    @media screen and (min-width: $screen-sm-min) {
+      width: percentage(1/2);
+    }
+    @media screen and (min-width: $screen-md-min) {
+      width: percentage(1/4);
+    }
     &:nth-child(3n) {
       background: $rgba-secondary-2-1;
     }

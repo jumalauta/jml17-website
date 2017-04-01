@@ -1,6 +1,8 @@
 .compo-machines {
   @include clearfix;
   &__machine {
-    @include span-columns(4 of 12);
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(4 of 12);
+    }
   }
 }

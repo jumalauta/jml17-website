@@ -3,12 +3,14 @@ $time-width: 60px;
   @include clearfix;
   margin: $line-height-computed * 2 0;
   &__day {
-    float: left;
     display: block;
-    width: percentage(1/3);
-    min-height: 460px;
-    @include pad();
     background: $rgba-primary-1;
+    @include pad();
+    @media screen and (min-width: $screen-md-min) {
+      float: left;
+      width: percentage(1/3);
+      min-height: 460px;
+    }
     &:nth-child(3n) {
       background: $rgba-secondary-2-1;
     }

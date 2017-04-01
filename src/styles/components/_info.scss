@@ -4,10 +4,17 @@
   h2 {
     text-align: center;
   }
+  @media screen and (max-width: $screen-sm-max) {
+    @include pad();
+  }
   &__left {
-    @include span-columns(6 of 12);
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(6 of 12);
+    }
   }
   &__right {
-    @include span-columns(6 of 12);
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(6 of 12);
+    }
   }
 }
