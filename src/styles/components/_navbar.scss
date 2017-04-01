@@ -109,14 +109,14 @@
     }
     ul {
       &:first-child {
-        margin-top: calc(50vh - 250px);
+        margin-top: calc(50vh - 105px);
       }
       display: block;
       top: $header-height;
       li {
         display: block;
-        padding: 0;
         a {
+          padding: 0;
           display: inline-block;
         }
       }
