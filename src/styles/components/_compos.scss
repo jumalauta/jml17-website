@@ -11,10 +11,10 @@
     display: block;
     @include pad();
     font-size: 0.8rem;
-    min-height: 230px;
     text-align: center;
     background: $rgba-primary-1;
     @media screen and (min-width: $screen-sm-min) {
+      min-height: 230px;
       float: left;
       width: percentage(1/2);
     }
