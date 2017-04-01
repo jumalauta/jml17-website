@@ -4,9 +4,20 @@
   height: 15px;
   transform: translateY(50%);
   z-index: 2;
+  animation: 5s linear 0s infinite patternSlide;
 }
 
 .pattern-bottom {
   @extend .pattern;
   transform: translateY(-50%);
+}
+
+
+@keyframes patternSlide {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 225px/(50/15); // magic numbers
+  }
 }
