@@ -1,22 +1,21 @@
 
 .navbar {
   $logoWidth: 200px + $grid-gutter;
-  $ulOffset: ($logoWidth / 2);
   display: block;
   text-align: center;
   font-family: $navbar-font-family;
   width: 100%;
+  vertical-align: middle;
   height: $header-height;
   ul {
-    display: block;
-    float: left;
+    display: inline-block;
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: $navbar-font-size;
-    width: calc(50% - #{$ulOffset});
+    vertical-align: middle;
     li {
-      display: block;
+      display: inline-block;
       vertical-align: middle;
       a {
         padding: $navbar-vertical-padding $navbar-horizontal-padding;
@@ -32,34 +31,22 @@
           margin: 0 auto;
           height: 0;
           width: 0;
-          border-bottom: 0 solid $navbar-link-color;
+          border-bottom: 3px solid $navbar-link-color;
           transition: width 150ms ease-in-out;
         }
         &:hover {
           color: $navbar-link-color;
           &:after {
             width: 100%;
-            border-bottom-width: 3px;
           }
         }
       }
     }
-    &.navbar-left {
-      li {
-        float: right;
-      }
-    }
-    &.navbar-right {
-      li {
-        float: left;
-      }
-    }
   }
   .logo {
-    display: block;
-    float: left;
+    display: inline-block;
     width: $logoWidth;
-    text-align: center;
+    vertical-align: middle;
     padding: (($header-height - (87px * 0.6)) / 2) 0;
     svg {
       width: 267px * 0.6;
