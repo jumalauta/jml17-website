@@ -25,8 +25,22 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: color 250ms ease-in-out;
+        &:after {
+          content: " ";
+          position: relative;
+          display: block;
+          margin: 0 auto;
+          height: 0;
+          width: 0;
+          border-bottom: 0 solid $navbar-link-color;
+          transition: width 150ms ease-in-out;
+        }
         &:hover {
-          color: transparentize($navbar-link-color, 0.5);
+          color: $navbar-link-color;
+          &:after {
+            width: 100%;
+            border-bottom-width: 3px;
+          }
         }
       }
     }
@@ -57,8 +71,11 @@
   .scroll-top & {
     ul li a {
       color: $white;
+      &:after {
+        border-bottom-color: $white;
+      }
       &:hover {
-        color: transparentize($white, 0.5);
+        color: $white;
       }
     }
     .logo svg {

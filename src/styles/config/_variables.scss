@@ -43,7 +43,7 @@ $header-background: $white;
 $navbar-link-color: $primary-color;
 $navbar-font-family: "Rift", sans-serif;
 $navbar-font-size: 1.8rem;
-$navbar-vertical-padding: ($header-height - (1.8 * $font-size-base)) / 2;
+$navbar-vertical-padding: ($header-height - (2 * $font-size-base)) / 2;
 $navbar-horizontal-padding: $grid-gutter / 2;
 
 // -- Z order
