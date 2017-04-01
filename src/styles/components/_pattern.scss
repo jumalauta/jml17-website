@@ -1,5 +1,12 @@
 .pattern {
-  background: white url('../images/pattern.png') bottom center repeat-x;
-  height: 80px;
-  opacity: 0.3;
+  position: relative;
+  background: transparent url('../images/diagonal.svg') bottom center repeat-x;
+  height: 15px;
+  transform: translateY(50%);
+  z-index: 2;
+}
+
+.pattern-bottom {
+  @extend .pattern;
+  transform: translateY(-50%);
 }
