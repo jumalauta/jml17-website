@@ -1,5 +1,5 @@
 // i don't even, fuck this shit, gotta configure rollup to import modules properly or something
-import {tween} from './libs/shifty/main';
+import {tween} from 'shifty/src/main';
 
 const offset = -80; // eslint-disable-line no-mixed-operators
 

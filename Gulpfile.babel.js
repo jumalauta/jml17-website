@@ -177,7 +177,6 @@ gulp.task('rollup', ['eslint'], function () {
 
   // we need to override .babelrc because gulp needs dirrefent configuration for Gulpfile.babel.js
   const babelOptions = {
-    exclude: 'node_modules/**',
     babelrc: false,
     presets: ['es2015-rollup'],
   };
