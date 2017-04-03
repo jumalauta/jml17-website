@@ -89,7 +89,12 @@ export default class ScrollSpy {
     this.anchorLinks.forEach((link) => {
       const target = window.document.getElementById(link.getAttribute('href').substr(1));
       const rect = target.getBoundingClientRect();
-      items.push({ href: link.getAttribute('href'), top: rect.top + offset - 1 });
+      // use bodyrect to detect when item is about 3rd of the screen from top
+      items.push({
+        href: link.getAttribute('href'),
+        top: (rect.top + offset) - (bodyRect.height / 3),
+        bottom: rect.bottom
+      });
     });
 
     const sortedItems = items.sort((a, b) => {
@@ -101,7 +106,7 @@ export default class ScrollSpy {
     } else {
       // get closest item
       sortedItems.forEach((item) => {
-          if (item.top < 0) {
+          if (item.top < 0 && item.bottom > 0) {
             currentItem = item;
           }
         });
