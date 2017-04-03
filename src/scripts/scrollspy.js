@@ -12,7 +12,7 @@ export default class ScrollSpy {
     this.noHashScroll = false;
 
     this.mainNavigation = element;
-    this.anchorLinks = element.querySelectorAll('a[href^="#"]');
+    this.anchorLinks = window.document.querySelectorAll('a[href^="#"]');
     this.anchorLinks.forEach((link) => {
       link.addEventListener('click', this.handleLinkClick);
     });
