@@ -79,8 +79,11 @@ export default class ScrollSpy {
   }
 
   handleScroll() {
+    const bodyRect = document.getElementsByTagName('body')[0].getBoundingClientRect();
     const items = [];
     let currentItem;
+
+    const maxScroll = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
 
     // get ids for sorting by top
     this.anchorLinks.forEach((link) => {
@@ -89,15 +92,20 @@ export default class ScrollSpy {
       items.push({ href: link.getAttribute('href'), top: rect.top + offset - 1 });
     });
 
-    // sort and get closest
-    items.sort((a, b) => {
+    const sortedItems = items.sort((a, b) => {
       return a.top > b.top ? 1 : -1;
-    })
-      .forEach((item) => {
-        if (item.top < 0) {
-          currentItem = item;
-        }
-      });
+    });
+    if(window.scrollY + bodyRect.height >= maxScroll) {
+      // mark last item as active on bottom
+      currentItem = sortedItems[sortedItems.length - 1];
+    } else {
+      // get closest item
+      sortedItems.forEach((item) => {
+          if (item.top < 0) {
+            currentItem = item;
+          }
+        });
+    }
 
     if(currentItem && currentItem.href !== window.document.location.hash) {
       this.noHashScroll = true;
