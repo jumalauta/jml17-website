@@ -1,6 +1,6 @@
 @keyframes spinnerAnimation {
   0% {
-    transform: translateY(-40px) ;
+    transform: translateY(-40px);
   }
   100% {
     transform: translateY(40px);
@@ -8,6 +8,7 @@
 }
 
 .spinner {
+  background-color: #fff;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -15,9 +16,8 @@
   align-items: center;
   justify-content: center;
   z-index: 65000;
-  transform: rotate(-10deg);
-  animation: 3s ease-in-out 0s infinite spinnerAnimation;
   svg {
+    animation: 3s ease-in-out 0s infinite alternate spinnerAnimation;
     display: block;
     width: 267px;
     height: 87px;

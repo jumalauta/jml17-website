@@ -21,16 +21,16 @@ html, body {
     pointer-events: none;
     transition: opacity 250ms ease-in-out 00ms;
   }
-  &.wf-inactive .wrapper, &.app-loading .wrapper {
+  &.wf-loading .wrapper, &.app-loading .wrapper {
     opacity: 0;
   }
-  &.wf-active.app-loaded .wrapper {
+  &.wf-active.app-loaded .wrapper, &.wf-inactive.app-loaded .wrapper {
     opacity: 1;
   }
-  &.wf-inactive .wrapper, &.app-loading .spinner {
+  &.wf-loading .wrapper, &.app-loading .spinner {
     opacity: 1;
   }
-  &.wf-active.app-loaded .spinner {
+  &.wf-active.app-loaded .spinner, &.wf-inactive.app-loaded .spinner {
     opacity: 0;
   }
 }
