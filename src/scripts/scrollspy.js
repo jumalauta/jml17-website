@@ -1,5 +1,5 @@
 // i don't even, fuck this shit, gotta configure rollup to import modules properly or something
-import {tween} from 'shifty/src/main';
+import { tween } from 'shifty/src/main';
 
 const offset = -80; // eslint-disable-line no-mixed-operators
 
@@ -30,15 +30,15 @@ export default class ScrollSpy {
 
   handleHashChange(event) {
     event.preventDefault();
-    if(this.noHashScroll) {
+    if (this.noHashScroll) {
       return;
     }
     let href = window.location.hash;
-    if(href === '') {
+    if (href === '') {
       href = '#top';
     }
     const target = window.document.getElementById(href.substr(1));
-    if(target !== this.currentTarget) {
+    if (target !== this.currentTarget) {
       this.scrollToTarget(target, false);
     }
   }
@@ -55,7 +55,6 @@ export default class ScrollSpy {
       event.preventDefault();
       this.currentTarget = target;
       const targetRect = target.getBoundingClientRect();
-      const dy = targetRect.top + offset;
       const scrollY = (targetRect.top - bodyRect.top) + offset;
       let from = { scrollY: window.scrollY };
       let to = { scrollY: scrollY };
@@ -70,7 +69,7 @@ export default class ScrollSpy {
       }).then(
         () => {
           // window.location.hash = href;
-          if(changeHash) {
+          if (changeHash) {
             history.pushState({}, document.title, `#${target.getAttribute('id')}`);
           }
         }
@@ -83,7 +82,13 @@ export default class ScrollSpy {
     const items = [];
     let currentItem;
 
-    const maxScroll = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+    const maxScroll = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
 
     // get ids for sorting by top
     this.anchorLinks.forEach((link) => {
@@ -100,30 +105,32 @@ export default class ScrollSpy {
     const sortedItems = items.sort((a, b) => {
       return a.top > b.top ? 1 : -1;
     });
-    if(window.scrollY + bodyRect.height >= maxScroll) {
+    if (window.scrollY + bodyRect.height >= maxScroll) {
       // mark last item as active on bottom
       currentItem = sortedItems[sortedItems.length - 1];
     } else {
       // get closest item
       sortedItems.forEach((item) => {
-          if (item.top < 0 && item.bottom > 0) {
-            currentItem = item;
-          }
-        });
+        if (item.top < 0 && item.bottom > 0) {
+          currentItem = item;
+        }
+      });
     }
 
-    if(currentItem && currentItem.href !== window.document.location.hash) {
+    if (currentItem && currentItem.href !== window.document.location.hash) {
       this.noHashScroll = true;
       history.replaceState({}, document.title, currentItem.href);
       this.noHashScroll = false;
     }
 
     // mark active
+    /* eslint-disable no-param-reassign */
     this.anchorLinks.forEach((link) => {
       link.className = link.className.replace(' active', '');
       if (currentItem && link.getAttribute('href') === currentItem.href) {
         link.className += ' active';
       }
     });
+    /* eslint-enable no-param-reassign */
   }
 }
