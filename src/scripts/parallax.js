@@ -53,10 +53,9 @@ export default class Parallax {
       const containerMiddle = containerRect.top + (containerRect.height / 2);
       const screenMiddle = bodyRect.height / 2;
       const middleDiff = screenMiddle - containerMiddle;
-      const max = containerRect.height;
-      const min = -max;
-      ratio = (middleDiff - min) / (max - min);
-      transform = (ratio * (this.amount * 2)) - this.amount;
+      // 0 = top, -1 = bottom
+      const relativePosition = (middleDiff / bodyRect.height) - 0.5;
+      transform = relativePosition * this.amount;
     } else if (this.anchor === 'top') {
       const diff = containerRect.height - Math.abs(containerRect.top);
       ratio = 1 - (diff / containerRect.height);
