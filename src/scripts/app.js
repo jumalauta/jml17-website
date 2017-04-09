@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+import './polyfill/NodeListForEach';
 import Parallax from './parallax';
 import MainNavigation from './mainnavigation';
 import ScrollSpy from './scrollspy';
