@@ -1,0 +1,11 @@
+.open-positions {
+  @include clearfix;
+  &__position {
+    h2 {
+      text-align: center;
+    }
+    @media screen and (min-width: $screen-md-min) {
+      @include span-columns(4 of 12);
+    }
+  }
+}
