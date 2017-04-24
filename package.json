@@ -51,6 +51,7 @@
     "webpack": "1.14.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "bourbon": "^4.3.4",
     "bourbon-neat": "1.8.0",
     "hamburgers": "^0.8.1",
